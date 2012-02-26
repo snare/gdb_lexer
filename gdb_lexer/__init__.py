@@ -14,7 +14,7 @@ class GDBLexer(RegexLexer):
     tokens = {
         'root': [
             (r'\s+', Text),
-            (r'(\(?gdb\)?\$?)( )('+identifier+')(/?)(\d*)(\w*)',
+            (r'(\(?gdb[\)\$])( )('+identifier+')(/?)(\d*)(\w*)',
                 bygroups(Keyword.Type, Text, Name.Builtin, Text, Literal.Number.Integer, Keyword.Constant)),
             (number, Number.Hex),
             (string, String),
